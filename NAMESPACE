@@ -1,0 +1,16 @@
+#exportPattern("^[[:alpha:]]+")
+## from annotation.R
+export( "getAnnotation", "getAnnotationForIDs" )
+## from convertTxt2Xls.R
+export( "convertTxt2Xls" )
+## from generic-category.R
+export( "hyperGGeneric" )
+## from http-file-access.R
+export( "read.table.from.http" )
+export( "load.from.http" )
+## from pastedmatch.R
+export( "pastedmatch" )
+## from probesetSelection.R
+export( "getRepPS" )
+
+#import(Category,Biobase,multtest,WriteXLS)

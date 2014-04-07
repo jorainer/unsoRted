@@ -1,0 +1,4 @@
+* Some things which might still be done or improved
+
+** TODO File =annotation.R=, function =getAnnotation=: speed up the call.
+** TODO File =annotation.R=: implement annotations for our custom CDFs: automatically download them.
