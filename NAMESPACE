@@ -13,4 +13,4 @@ export( "pastedmatch" )
 ## from probesetSelection.R
 export( "getRepPS" )
 
-#import(Category,Biobase,multtest,WriteXLS)
+importFrom("WriteXLS", WriteXLS)
