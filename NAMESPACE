@@ -14,3 +14,7 @@ export( "pastedmatch" )
 export( "getRepPS" )
 
 importFrom("WriteXLS", WriteXLS)
+import( "AnnotationDbi" )
+import( "multtest" )
+import( "Category" )
+import( "parallel" )

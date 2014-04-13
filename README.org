@@ -62,8 +62,8 @@ Please add new functions or improve existing ones. New functions should be docum
 
 (please add your name to this (=README.org=) file if you edit the code or add new functionality).
 
-* TODOs
+** TODOs
 
-** TODO File =annotation.R=, function =getAnnotation=: speed up the call.
-** TODO File =annotation.R=: implement annotations for our custom CDFs: automatically download them.
+*** TODO File =annotation.R=, function =getAnnotation=: speed up the call.
+*** TODO File =annotation.R=: implement annotations for our custom CDFs: automatically download them.
 
