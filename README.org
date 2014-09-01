@@ -65,5 +65,11 @@ Please add new functions or improve existing ones. New functions should be docum
 ** TODOs
 
 *** TODO File =annotation.R=, function =getAnnotation=: speed up the call.
+    :PROPERTIES:
+    :ID:       6466E194-27C0-4ACD-AF24-FF5587697DBA
+    :END:
 *** TODO File =annotation.R=: implement annotations for our custom CDFs: automatically download them.
+    :PROPERTIES:
+    :ID:       0E3493C1-34D6-4A33-A322-661E781E72C5
+    :END:
 
