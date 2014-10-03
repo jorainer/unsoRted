@@ -8,7 +8,6 @@ getRepPS <- function( x, annot, FUN=function( z ){ mean( z ) * sd( z ) }, order.
     if( class( x )!="matrxi" | class( x )!="data.frame" ){
         x <- as.matrix( x )
     }
-    require( parallel )
     CN.sub <- c( gene.id.col, probeset.id.col )
     check.probe.count <- TRUE
     ## checking columns.

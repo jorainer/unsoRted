@@ -5,7 +5,6 @@ Version: 1.0.3
 Date: 2014-10-03
 Author: Johannes Rainer, Daniel Bindreither
 Maintainer: Johannes Rainer <johannes.rainer@i-med.ac.at>
-Imports: Biobase, WriteXLS (>= 3.5.0), parallel, Category, multtest, AnnotationDbi
-Depends: Biobase, WriteXLS (>= 3.5.0), parallel, Category, multtest, AnnotationDbi, RColorBrewer
+Imports: Biobase, WriteXLS (>= 3.5.0), parallel, Category, multtest, AnnotationDbi, RColorBrewer
 Description: This package contains some (unsorted) utility functions for a variety of different puroposes.
 License: LGPL

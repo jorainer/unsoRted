@@ -1,4 +1,5 @@
 \name{plotCategoryBar}
+\alias{plotCategoryBar}
 \alias{plotCategoryBars}
 \title{
 Plot horizontal bars for category enrichment analysis results
@@ -8,9 +9,17 @@ Plot horizontal bars for category enrichment analysis results
   enrichment results.
 }
 \usage{
-plotCategoryBar <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9, "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, ... )
+plotCategoryBar( x=0, y=0, width=1, size, count=NULL,
+subcount=NULL, col.size="lightgrey", border.size="grey",
+col.count=brewer.pal( 9, "Greys" )[ 7 ], border.count=col.count,
+col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="",
+legend=FALSE, xlim, cex=par( "cex" ), ... )
 
-plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9 , "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, asc=TRUE, spacer=width/10, ... )
+plotCategoryBars( x=0, y=0, width=1, size, count=NULL,
+subcount=NULL, col.size="lightgrey", border.size="grey",
+col.count=brewer.pal( 9 , "Greys" )[ 7 ], border.count=col.count,
+col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="",
+legend=FALSE, asc=TRUE, spacer=width/10, xlim, cex.legend=par( "cex" ), cex=par( "cex" ), ... )
 
 }
 \arguments{
@@ -84,6 +93,17 @@ plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL
   }
   \item{spacer}{
     the spacing between the rectangles on the y-axis.
+  }
+  \item{xlim}{
+    the xlim for the plot region. Rectangles will be cropped if size is
+    larger than \code{xlim[2]} with the actual count of the size being
+    plotted into the rectangle.
+  }
+  \item{cex}{
+    graphical parameter for the plot.
+  }
+  \item{cex.legend}{
+    allows to adjust in addition the size of the legend.
   }
   \item{...}{
     additional parameters to be passed to the \code{plot} function.

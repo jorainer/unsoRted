@@ -18,24 +18,35 @@
 ## legend: whether or not a legend should be plotted.
 ##
 ## Important note: size is assumed to be always bigger than the sum of counts!
-plotCategoryBar <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9, "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, ... ){
+plotCategoryBar <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9, "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount=col.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, xlim, cex=par( "cex" ), ... ){
     if( missing( size ) )
         stop( "Parameter size has to be defined!" )
     ## count and subcount are optional.
+    max.x <- NULL    ## will use this later to crop bars... in case...
+    if( !missing( xlim ) ){
+        x <- xlim[ 1 ]
+        max.x <- xlim[ 2 ]
+    }else{
+        xlim <- c( x, x+size )
+        max.x <- xlim[ 2 ]
+    }
     if( !add ){
         YLIM <- c( y-width/2, y+width/2 )
         if( legend ){
             YLIM[ 2 ] <- YLIM[ 2 ] + diff( YLIM )/10
         }
-        plot( x, y, pch=NA, xlim=c( x, x+size ), ylim=YLIM, yaxt="n", bty="n", xlab=xlab, ylab=ylab, ... )
+        plot( x, y, pch=NA, xlim=xlim, ylim=YLIM, yaxt="n", bty="n", xlab=xlab, ylab=ylab, cex=cex, ... )
     }
     ## background.
     rect( xleft=x, ybottom=y-width/2, xright=x+size, ytop=y+width/2, col=col.size, border=border.size )
+    if( x+size > max.x ){
+        text( x=max.x, y=y, labels=paste( size, "->" ), col="darkgrey", pos=2, cex=cex )
+    }
     legend.legend <- "all"
     legend.col <- col.size
     ## process count, if defined.
     if( !is.null( count ) ){
-        if( class( count )!="numeric" )
+        if( class( count )!="integer" & class( count )!="numeric" )
             stop( "count should be numeric!" )
         ## we do require names for the counts, otherwise the legend does not have any sense...
         if( is.null( names( count ) ) ){
@@ -77,7 +88,7 @@ plotCategoryBar <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL,
     if( !is.null( subcount ) ){
         if( is.null( names( subcount ) ) )
             names( subcount ) <- 1:length( subcount )
-        if( class( subcount )!="numeric" )
+        if( class( subcount )!="integer" & class( subcount )!="numeric" )
             stop( "subcount should be a numeric vector!" )
         ## check if we do have subcount colors defined...
         ## if we do have named color check if the names fit and in case sub-set.
@@ -123,21 +134,26 @@ plotCategoryBar <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL,
 ## spacer: the space in between the bars on the y axis.
 ## subcount: if defined, it has to be a list of (named!) numerical vectors. The names are required to match the numbers in the numerical vectors to the colors.
 ## col.subcount: a vector of (named!) colors. The names have to match the names of the numbers in the subcount list.
-plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9 , "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, asc=TRUE, spacer=width/10, ... ){
+plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL, col.size="lightgrey", border.size="grey", col.count=brewer.pal( 9 , "Greys" )[ 7 ], border.count=col.count, col.subcount=NULL, border.subcount=col.subcount, add=FALSE, xlab="count", ylab="", legend=FALSE, asc=TRUE, spacer=width/10, xlim, cex.legend=par( "cex" ), cex=par( "cex" ), ... ){
     if( missing( size ) )
         stop( "Parameter size has to be defined!" )
-    if( class( size )!="numeric" )
+    if( class( size )!="numeric" & class( size )!="integer" )
         stop( "Parameter size has to be a numeric vector!" )
     ## count and subcount are optional
     ## let's go. Do it with a simple and poor for loop.
     if( !add ){
         max.size <- max( size )
-        XLIM <- c( x, x+max.size )
+        if( !missing( xlim ) ){
+            XLIM <- xlim
+        }else{
+            XLIM <- c( x, x+max.size )
+        }
         YLIM <- c( y-width/2, y + width/2 + ( ( length( size ) -1 ) * ( width + spacer ) ) )
         if( legend ){
             YLIM[ 2 ] <- YLIM[ 2 ] + diff( YLIM )/10
         }
-        plot( 3, 3, pch=NA, xlim=XLIM, ylim=YLIM, yaxt="n", bty="n", xlab=xlab, ylab="", ... )
+        par( mar=c( 5.1, 4.1, 1, 1 ) )
+        plot( 3, 3, pch=NA, xlim=XLIM, ylim=YLIM, yaxt="n", bty="n", xlab=xlab, ylab="", cex=cex, ... )
         if( !is.null( names( size ) ) ){
             ## will use the names of the size as axis labels...
             Maxw <- max( strwidth( names( size ), cex=par( "cex.axis" ), units="in" ) )
@@ -156,7 +172,7 @@ plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL
     ## what do I require: size should be numeric, count should be numeric or a list,
     ## subcount should always be a list.
     if( !is.null( count ) ){
-        if( class( count )=="numeric" ){
+        if( class( count )=="numeric" | class( count )=="integer" ){
             count <- as.list( count )
         }
         if( class( count )!="list" )
@@ -230,11 +246,11 @@ plotCategoryBars <- function( x=0, y=0, width=1, size, count=NULL, subcount=NULL
         if( !is.null( subcount ) ){
             current_subcount <- subcount[[ i ]]
         }
-        plotCategoryBar( x=x, y=current_y, add=TRUE, width=width, size=size[ i ], count=current_count, subcount=current_subcount, col.size=col.size, border.size=border.size, col.count=col.count, border.count=border.count, col.subcount=col.subcount, border.subcount=border.subcount )
+        plotCategoryBar( x=x, y=current_y, add=TRUE, width=width, size=size[ i ], count=current_count, subcount=current_subcount, col.size=col.size, border.size=border.size, col.count=col.count, border.count=border.count, col.subcount=col.subcount, border.subcount=border.subcount, xlim=xlim, cex=cex, ... )
         current_y <- current_y + width + spacer
     }
     if( legend ){
-        legend( "top", horiz = TRUE, legend=Legend.legend, col=Legend.col , pch=15 )
+        legend( "top", horiz = TRUE, legend=Legend.legend, col=Legend.col , pch=15, cex=cex.legend )
     }
 }
 
