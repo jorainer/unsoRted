@@ -12,6 +12,9 @@ export( "load.from.http" )
 export( "pastedmatch" )
 ## from probesetSelection.R
 export( "getRepPS" )
+## from category-plot.R
+export( "plotCategoryBar" )
+export( "plotCategoryBars" )
 
 importFrom("WriteXLS", WriteXLS)
 import( "AnnotationDbi" )

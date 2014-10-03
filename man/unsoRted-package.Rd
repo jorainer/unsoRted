@@ -31,6 +31,14 @@ This package contains some utilities and functions.
 
   }
 
+  Visualizations:
+
+  \itemize{
+    \item plotCategoryBar and plotCategoryBars: visualization of
+    category enrichment analysis results. For more informations
+    see \code{\link{plotCategoryBar}}.
+  }
+
   Utilities:
 
   \itemize{
