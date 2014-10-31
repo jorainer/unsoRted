@@ -9,7 +9,7 @@ x with, also eventually separated values in y. The function returns TRUE
 for each element in x that is also present in y.
 }
 \usage{
-pastedmatch( x, y, split=";" )
+pastedmatch( x, y, split=";", fixed=TRUE )
 }
 \arguments{
   \item{x}{
@@ -21,6 +21,9 @@ pastedmatch( x, y, split=";" )
   }
   \item{split}{
     The character that can/will be used to split the elements.
+  }
+  \item{fixed}{
+    Uses the \code{split} argument as is.
   }
 }
 \value{
