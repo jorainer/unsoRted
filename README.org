@@ -44,6 +44,8 @@ This R package contains some unsorted utilities and functions that might make li
 
 + =plotCategoryBar= and =plotCategoryBars=: visualization of category enrichment analysis results.
 
++ =modColor=, =shiftColor= and =invertColor=: invert or shift colors in RGB or HSV color space.
+
 ** Other utilities
 
 + =convertTxt2Xls=: converts a text file with tabular content to a Microsoft Excel spreadsheet. For more informations see the according help.

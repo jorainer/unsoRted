@@ -15,11 +15,16 @@ export( "getRepPS" )
 ## from category-plot.R
 export( "plotCategoryBar" )
 export( "plotCategoryBars" )
+## from invertColor.R
+export( "modColor" )
+exportMethods( "invertColor" )
+exportMethods( "shiftColor" )
 
 importFrom("WriteXLS", WriteXLS)
-import( "AnnotationDbi" )
 import( "multtest" )
+import( "AnnotationDbi" )
 import( "Category" )
 import( "parallel" )
 import( "RColorBrewer" )
 import( "Biobase" )
+import( "colorspace" )

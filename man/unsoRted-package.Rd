@@ -37,6 +37,9 @@ This package contains some utilities and functions.
     \item plotCategoryBar and plotCategoryBars: visualization of
     category enrichment analysis results. For more informations
     see \code{\link{plotCategoryBar}}.
+
+    \item modColor, shiftColor and invertColor: shift or invert colors
+  in RGB or HSV color space. See examples in \code{\link{modColor}}.
   }
 
   Utilities:
