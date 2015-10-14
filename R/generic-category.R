@@ -97,7 +97,7 @@ hyperGGeneric <- function(fg.gns=character(), bg.gns=character(), x, proc="BH"){
                      Count=numWdrawn,
                      Size=numW,
                      perc=numWdrawn*100/numW,
-                     Fold.Enr=(numWdrawn/numW)/(length(fg.gns)/length(bg.gns))
+                     Fold.Enr=(numWdrawn/numW)/(length(fg.gns)/length(bg.gns)),
                      fg.gns=entrezids,
                      bg.gns=entrezids.universe)
     DF <- DF[ order(DF$rawp), ]
