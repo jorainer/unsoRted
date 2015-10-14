@@ -44,7 +44,14 @@ hyperGGeneric( fg.gns=character(), bg.gns=character(), x, proc="BH" )
   \item{\dQuote{Size}}{the total number of \dQuote{bg.gns} associated
     with the category.}
   \item{\dQuote{perc}}{the percentage of \dQuote{fg.gns} associated with
-  the categors (related to the number of \dQuote{bg.gns} in the category).}
+    the category (related to the number of \dQuote{bg.gns} in the
+    category).}
+  \item{\dQuote{Fold.Enr}}{
+    The ratio between the proportion of genes in the category being
+    significantly regulated (i.e. Count/Size) against the proportion of regulated
+    genes relative to the total amount of detected and tested genes
+    (i.e. the ratio between the fg.gns/bg.gns).
+  }
   \item{\dQuote{fg.gns}}{the list of all \dQuote{fg.gns} associated to
     the category (as a string, with elements separated by a \dQuote{;}).}
   \item{\dQuote{bg.gns}}{the list of all \dQuote{bg.gns} associated to
