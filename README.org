@@ -25,6 +25,8 @@
 #+LATEX_HEADER: \makeatother
 -----
 
+[![Travis-CI Build Status](https://travis-ci.org/jotsetung/unsoRted.svg?branch=master)](https://travis-ci.org/jotsetung/unsoRted)
+
 * Description
 
 This R package contains some unsorted utilities and functions that might make life easier in the day-to-day use of R for data analysis.
