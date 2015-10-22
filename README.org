@@ -29,6 +29,14 @@
 [![Travis-CI Build Status](https://travis-ci.org/jotsetung/unsoRted.svg?branch=master)](https://travis-ci.org/jotsetung/unsoRted)
 #+END_HTML
 
+[[https://travis-ci.org/jotsetung/unsoRted.svg?branch=master]]
+
+Second try:
+
+[[https://travis-ci.org/jotsetung/unsoRted][https://travis-ci.org/jotsetung/unsoRted.svg?branch=master]]
+
+[[Link][desc]
+
 * Description
 
 This R package contains some unsorted utilities and functions that might make life easier in the day-to-day use of R for data analysis.
