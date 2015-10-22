@@ -26,7 +26,7 @@
 
 ---
 
-[![Travis-CI Build Status](<https://travis-ci.org/jotsetung/unsoRted.svg?branch=master>)](<https://travis-ci.org/jotsetung/unsoRted>)
+[![Travis-CI Build Status](https://travis-ci.org/jotsetung/unsoRted.svg?branch=master)](https://travis-ci.org/jotsetung/unsoRted)
 
 # Description<a id="orgheadline4"></a>
 
