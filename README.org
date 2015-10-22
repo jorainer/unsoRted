@@ -25,17 +25,13 @@
 #+LATEX_HEADER: \makeatother
 -----
 
-#+BEGIN_HTML
-[![Travis-CI Build Status](https://travis-ci.org/jotsetung/unsoRted.svg?branch=master)](https://travis-ci.org/jotsetung/unsoRted)
-#+END_HTML
+# #+BEGIN_HTML
+# [![Travis-CI Build Status](https://travis-ci.org/jotsetung/unsoRted.svg?branch=master)](https://travis-ci.org/jotsetung/unsoRted)
+# #+END_HTML
 
-[[https://travis-ci.org/jotsetung/unsoRted.svg?branch=master]]
-
-Second try:
 
 [[https://travis-ci.org/jotsetung/unsoRted][https://travis-ci.org/jotsetung/unsoRted.svg?branch=master]]
 
-[[Link][desc]
 
 * Description
 
