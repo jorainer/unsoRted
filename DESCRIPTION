@@ -1,11 +1,13 @@
 Package: unsoRted
 Type: Package
 Title: Unsorted R functions and utilities
-Version: 1.0.7
-Date: 2015-09-14
+Version: 1.1.0
+Date: 2015-10-29
 Author: Johannes Rainer, Daniel Bindreither
 Maintainer: Johannes Rainer <johannes.rainer@eurac.edu>
 Depends: Biobase, parallel, RColorBrewer
-Imports: WriteXLS (>= 3.5.0), Category, multtest, AnnotationDbi, colorspace
-Description: This package contains some (unsorted) utility functions for a variety of different puroposes.
+Imports: WriteXLS (>= 3.5.0), Category, AnnotationDbi, colorspace
+Description: This package contains some (unsorted) utility functions for
+	     a variety of different puroposes.
 License: LGPL
+

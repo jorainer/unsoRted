@@ -21,7 +21,7 @@ exportMethods( "invertColor" )
 exportMethods( "shiftColor" )
 
 importFrom("WriteXLS", WriteXLS)
-import( "multtest" )
+##import( "multtest" )
 import( "AnnotationDbi" )
 import( "Category" )
 import( "parallel" )

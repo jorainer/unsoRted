@@ -21,7 +21,8 @@ checkFgAndBgGeneSets <- function(fg.gns, bg.gns) {
 }
 
 
-hyperGGeneric <- function(fg.gns=character(), bg.gns=character(), x, proc="BH"){
+hyperGGeneric <- function(fg.gns=character(), bg.gns=character(), x, method="BH"){
+    method <- match.arg(method, p.adjust.methods)
     if(missing(x)){
         stop("Argument x is mandatory")
     }
@@ -89,18 +90,20 @@ hyperGGeneric <- function(fg.gns=character(), bg.gns=character(), x, proc="BH"){
     expected <- expected/(numWdrawn + n12 + n21 + n22)
     pvals <- phyper(numWdrawn - 1L, numW, numB, numDrawn,
                     lower.tail = FALSE)
-    AdjP2 <- mt.rawp2adjp(pvals, proc=proc)
-    AdjP2 <- AdjP2$adj[ order(AdjP2$index), ]
-    rownames(AdjP2) <- names(pvals)
+    padj <- p.adjust(pvals, method=method)
+    ## AdjP2 <- mt.rawp2adjp(pvals, proc=proc)
+    ## AdjP2 <- AdjP2$adj[ order(AdjP2$index), ]
+    ## rownames(AdjP2) <- names(pvals)
     DF <- data.frame(Term=names(x),
-                     AdjP2,
+                     Pvalue=pvals,
+                     padj=padj,
                      Count=numWdrawn,
                      Size=numW,
                      perc=numWdrawn*100/numW,
                      Fold.Enr=(numWdrawn/numW)/(length(fg.gns)/length(bg.gns)),
                      fg.gns=entrezids,
                      bg.gns=entrezids.universe)
-    DF <- DF[ order(DF$rawp), ]
+    DF <- DF[ order(DF$Pvalue), ]
     return(DF)
 }
 

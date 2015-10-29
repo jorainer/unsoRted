@@ -28,22 +28,23 @@ hyperGGeneric( fg.gns=character(), bg.gns=character(), x, proc="BH" )
     vectors, the names of the list specifying the category names and the
     values the genes associated with the category.
   }
-  \item{proc}{
-    The method to be used for multiple hypothesis testing (see help of
-    the function \code{mt.rawp2adjp} in the \dQuote{multtest} package).
+  \item{method}{
+    The method to be used for multiple hypothesis testing. Allowed are
+    all values of \code{p.adjust.methods}.
   }
 }
 \value{
   A data.frame with columns:
-  \item{\dQuote{Term}}{the category name}
-  \item{\dQuote{rawp}}{the p-value from the hypergeometric test.}
-  \item{a column named
-    according to the parameter \dQuote{proc} (e.g. \dQuote{BH})}{}
-  \item{\dQuote{Count}}{the number of \dQuote{fg.gns} associated with
+  \item{\dQuote{Term}}{The category name}
+  \item{\dQuote{Pvalue}}{The (raw) p-value from the hypergeometric test.}
+  \item{\dQuote{padj}}{The adjusted p-value, according to the specified
+    method.
+  }
+  \item{\dQuote{Count}}{The number of \dQuote{fg.gns} associated with
     the category.}
-  \item{\dQuote{Size}}{the total number of \dQuote{bg.gns} associated
+  \item{\dQuote{Size}}{The total number of \dQuote{bg.gns} associated
     with the category.}
-  \item{\dQuote{perc}}{the percentage of \dQuote{fg.gns} associated with
+  \item{\dQuote{perc}}{The percentage of \dQuote{fg.gns} associated with
     the category (related to the number of \dQuote{bg.gns} in the
     category).}
   \item{\dQuote{Fold.Enr}}{
@@ -52,9 +53,9 @@ hyperGGeneric( fg.gns=character(), bg.gns=character(), x, proc="BH" )
     genes relative to the total amount of detected and tested genes
     (i.e. the ratio between the fg.gns/bg.gns).
   }
-  \item{\dQuote{fg.gns}}{the list of all \dQuote{fg.gns} associated to
+  \item{\dQuote{fg.gns}}{The list of all \dQuote{fg.gns} associated to
     the category (as a string, with elements separated by a \dQuote{;}).}
-  \item{\dQuote{bg.gns}}{the list of all \dQuote{bg.gns} associated to
+  \item{\dQuote{bg.gns}}{The list of all \dQuote{bg.gns} associated to
     the category (as a string, with elements separated by a \dQuote{;}).}
 }
 \references{

@@ -1,0 +1,10 @@
+CHANGES IN VERSION 1.1.0
+-------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+    o Using the 'p.adjust' function instead of the p-adjustment function
+      from the multtest package. Thus, changed argument 'proc' in
+      hyperGGeneric into 'method'. Also, the result data.frame does now
+      provide columns 'Pvalue' (instead of 'rawp') and 'padj' (instead of the
+      adjustment method) with the raw and adjusted p-values, respectively.
+
