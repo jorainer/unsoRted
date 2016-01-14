@@ -97,6 +97,8 @@ hyperGGeneric <- function(fg.gns=character(), bg.gns=character(), x, method="BH"
     DF <- data.frame(Term=names(x),
                      Pvalue=pvals,
                      padj=padj,
+                     OddsRatio=odds_ratio,
+                     ExpCount=expected,
                      Count=numWdrawn,
                      Size=numW,
                      perc=numWdrawn*100/numW,
